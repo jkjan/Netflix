@@ -12,8 +12,6 @@ def get_cosine_similarity():
         cosine_sim = np.load(base + "movies_processed.npy")
 
     except IOError:
-        print("잠시만 기다려 주세요...")
-
         data['overview'] = data['overview'].fillna('')
         tfidf = TfidfVectorizer(stop_words="english")
         tfidf_marix = tfidf.fit_transform(data['overview'])
